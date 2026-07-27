@@ -9,17 +9,45 @@
   <img src="https://img.shields.io/badge/Docker-ready-2496ed?style=flat-square&logo=docker&logoColor=white" alt="Docker ready" />
   <img src="https://img.shields.io/badge/Agent%20Skill-SKILL.md-8b5cf6?style=flat-square" alt="Agent Skill" />
   <img src="https://img.shields.io/badge/MCP-not%20required-0f766e?style=flat-square" alt="MCP not required" />
+  <img src="https://img.shields.io/badge/B--roll-no%20per--shot%20AI%20fee-f59e0b?style=flat-square" alt="No per-shot AI generation fee" />
 </p>
 
 <p align="center">
   用一条 CLI 同时搜索、比较和下载 <strong>Pexels / Unsplash / Pixabay</strong> 的图片与视频，<br />
-  保存作者、来源页与许可信息，并以轻量 Agent Skill 按需调用。
+  让免费图库承担 AI 视频里的 B-roll、空镜和过场，不必每个镜头都消耗生成额度。
 </p>
 
 ```bash
 hbg-free-material search "Hong Kong cha chaan teng" --platform all --per-page 5 --json
 hbg-free-material video download "cat running in a garden" --platform all --count 2 --quality hd --json
 ```
+
+## 💸 核心卖点：用免费素材补足 AI 视频 B-roll
+
+生成式视频很适合制作现实中不存在、难以拍摄或必须高度定制的镜头，但大量常见 B-roll 并不一定值得逐条付费生成，例如：
+
+- 城市街景、自然风景、建筑与交通空镜。
+- 办公、阅读、打字、喝咖啡等日常动作。
+- 焦虑、思考、拒绝、放松等人物情绪镜头。
+- 口播视频的转场、遮剪、气氛铺垫和节奏填充。
+
+`hbg-free-material` 的定位不是替代 AI 视频生成，而是建立一条更省钱的混合工作流：
+
+| 镜头类型 | 更适合的方式 |
+|---|---|
+| 世界观、奇幻场景、指定角色与复杂运镜 | AI 生成视频 |
+| 城市、自然、人物动作、情绪和通用空镜 | 免费图库 B-roll |
+| 脚本拆镜、关键词生成、候选比较与素材归档 | Agent Skill + CLI |
+
+为什么可以做到低成本：
+
+- **工具完全免费开源**：CLI、Docker 和 Agent Skill 使用 MIT License。
+- **无需按镜头购买生成额度**：搜索和下载图库素材不会消耗 AI 视频 credits。
+- **API Key 可免费申请**：Pexels、Unsplash、Pixabay 均提供公开开发者入口，但可能存在请求频率、应用审核或使用规则。
+- **素材可以沉淀复用**：下载后保留本地文件和 `manifest.json`，后续同类项目可以继续筛选使用。
+
+> [!IMPORTANT]
+> 这里的“免费”是指工具本身不收费，并且这些平台提供可免费获取的图库内容；不代表素材没有版权或适用于所有场景。商用、广告、人物肖像、商标和敏感发布前，仍需检查具体素材页面及平台最新许可。
 
 ## 🎬 真实素材演示
 
@@ -145,6 +173,16 @@ python -m pip install -e .
 
 ## 🔐 配置 API Key
 
+### 平台官网、素材搜索与 API 申请入口
+
+| 平台 | 官网 | 直接找素材 | API 申请 / 文档 | 当前支持 |
+|---|---|---|---|---|
+| Pexels | [pexels.com](https://www.pexels.com/) | [搜索图片](https://www.pexels.com/search/) · [搜索视频](https://www.pexels.com/search/videos/) | [Pexels API](https://www.pexels.com/api/) | 图片、视频 |
+| Unsplash | [unsplash.com](https://unsplash.com/) | [搜索图片](https://unsplash.com/s/photos/) | [开发者入口](https://unsplash.com/developers) · [API 文档](https://unsplash.com/documentation) | 图片 |
+| Pixabay | [pixabay.com](https://pixabay.com/) | [搜索图片](https://pixabay.com/images/search/) · [搜索视频](https://pixabay.com/videos/search/) · [搜索音乐](https://pixabay.com/music/search/) | [Pixabay API 文档与 Key](https://pixabay.com/api/docs/) | 图片、视频、音乐下载 |
+
+申请步骤通常是：注册平台账号 → 进入开发者/API 页面 → 创建应用或查看 Key → 将 Key 写入本地 `.env`。API 是否需要审核、默认限额和允许用途可能变化，请以对应官网当前说明为准。
+
 ```bash
 cp .env.example .env
 ```
@@ -156,10 +194,6 @@ PEXELS_API_KEY=your_pexels_api_key
 UNSPLASH_API_KEY=your_unsplash_access_key
 PIXABAY_API_KEY=your_pixabay_api_key
 ```
-
-- [Pexels API](https://www.pexels.com/api/)
-- [Unsplash Developers](https://unsplash.com/developers)
-- [Pixabay API](https://pixabay.com/api/docs/)
 
 `.env` 已加入 `.gitignore` 和 `.dockerignore`。CLI 不会把 API Key 写入 JSON、manifest 或下载文件。
 
