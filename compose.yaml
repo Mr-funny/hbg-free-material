@@ -1,0 +1,38 @@
+name: hbg-free-material
+
+x-common: &common
+  build:
+    context: .
+  image: local/hbg-free-material:latest
+  env_file:
+    - path: .env
+      required: false
+  environment:
+    HBG_MATERIAL_DOWNLOAD_DIR: /downloads
+    HBG_MATERIAL_HOST_OUTPUT_DIR: ${HBG_MATERIAL_HOST_OUTPUT_DIR:-./downloads}
+  volumes:
+    - ${HBG_MATERIAL_HOST_OUTPUT_DIR:-./downloads}:/downloads
+
+services:
+  cli:
+    <<: *common
+    profiles: ["cli"]
+
+  music-proxy:
+    <<: *common
+    entrypoint: ["hbg-free-material", "proxy"]
+    restart: unless-stopped
+    environment:
+      HBG_MATERIAL_PROXY_HOST: 0.0.0.0
+      HBG_MATERIAL_PROXY_PORT: 8765
+      HBG_MATERIAL_PROXY_PUBLIC_BASE: http://127.0.0.1:${HBG_MATERIAL_PROXY_PORT:-8765}
+      HBG_MATERIAL_DOWNLOAD_DIR: /downloads
+      HBG_MATERIAL_HOST_OUTPUT_DIR: ${HBG_MATERIAL_HOST_OUTPUT_DIR:-./downloads}
+    ports:
+      - "127.0.0.1:${HBG_MATERIAL_PROXY_PORT:-8765}:8765"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s

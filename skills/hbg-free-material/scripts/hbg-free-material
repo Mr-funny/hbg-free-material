@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+
+if command -v hbg-free-material >/dev/null 2>&1; then
+  exec hbg-free-material "$@"
+fi
+
+printf '%s\n' "hbg-free-material CLI is not installed. Run the repository install.sh first." >&2
+exit 127

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="560" viewBox="0 0 1440 560" role="img" aria-labelledby="title desc">
+  <title id="title">HBG Free Material</title>
+  <desc id="desc">A polished banner for a stock image, video and music command line tool.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071525"/>
+      <stop offset="0.55" stop-color="#102a43"/>
+      <stop offset="1" stop-color="#123c46"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000" flood-opacity=".32"/>
+    </filter>
+  </defs>
+  <rect width="1440" height="560" rx="28" fill="url(#bg)"/>
+  <circle cx="1270" cy="80" r="210" fill="#38bdf8" opacity=".08"/>
+  <circle cx="110" cy="520" r="230" fill="#2dd4bf" opacity=".07"/>
+  <g opacity=".16" stroke="#fff" fill="none">
+    <path d="M0 120H1440M0 240H1440M0 360H1440M0 480H1440"/>
+    <path d="M240 0V560M480 0V560M720 0V560M960 0V560M1200 0V560"/>
+  </g>
+
+  <g transform="translate(95 106)">
+    <rect width="82" height="82" rx="22" fill="url(#accent)"/>
+    <path d="M23 56l17-20 12 13 9-10 14 17H23z" fill="#071525"/>
+    <circle cx="58" cy="25" r="7" fill="#071525"/>
+    <text x="0" y="155" fill="#f8fafc" font-family="ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="68" font-weight="760" letter-spacing="-2">HBG Free Material</text>
+    <text x="2" y="206" fill="#b9d7e6" font-family="ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="25">Stock images, videos &amp; music — one clean CLI, one lightweight Agent Skill.</text>
+
+    <g transform="translate(0 252)" font-family="ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="18" font-weight="650">
+      <rect width="145" height="46" rx="23" fill="#fff" opacity=".1"/><text x="27" y="30" fill="#dffcf7">PEXELS</text>
+      <rect x="160" width="160" height="46" rx="23" fill="#fff" opacity=".1"/><text x="184" y="30" fill="#e7f1ff">UNSPLASH</text>
+      <rect x="335" width="150" height="46" rx="23" fill="#fff" opacity=".1"/><text x="360" y="30" fill="#e6fff5">PIXABAY</text>
+      <rect x="500" width="170" height="46" rx="23" fill="#5eead4" opacity=".95"/><text x="528" y="30" fill="#09202d">CLI + SKILL</text>
+    </g>
+  </g>
+
+  <g transform="translate(1010 92)" filter="url(#shadow)">
+    <g transform="rotate(-8 110 170)">
+      <rect width="218" height="332" rx="24" fill="#e8fbf7"/>
+      <rect x="18" y="18" width="182" height="208" rx="16" fill="#86d8c8"/>
+      <circle cx="109" cy="100" r="42" fill="#123c46" opacity=".85"/>
+      <path d="M38 204l48-57 37 36 28-26 49 47H38z" fill="#123c46" opacity=".86"/>
+      <rect x="28" y="255" width="120" height="14" rx="7" fill="#123c46" opacity=".72"/>
+      <rect x="28" y="281" width="160" height="10" rx="5" fill="#123c46" opacity=".28"/>
+    </g>
+    <g transform="translate(148 68) rotate(8 105 150)">
+      <rect width="210" height="304" rx="24" fill="#eaf3ff"/>
+      <rect x="18" y="18" width="174" height="174" rx="16" fill="#7eb7f5"/>
+      <path d="M80 68l66 38-66 38z" fill="#071525" opacity=".82"/>
+      <rect x="28" y="220" width="112" height="14" rx="7" fill="#123c46" opacity=".72"/>
+      <rect x="28" y="246" width="154" height="10" rx="5" fill="#123c46" opacity=".28"/>
+    </g>
+    <g transform="translate(64 257) rotate(-2 140 60)">
+      <rect width="300" height="118" rx="24" fill="#102a43" stroke="#5eead4" stroke-width="2"/>
+      <path d="M28 65h10l7-21 10 44 11-33 10 20 10-11 10 8 10-28 12 40 10-18 12 6h130" fill="none" stroke="url(#accent)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

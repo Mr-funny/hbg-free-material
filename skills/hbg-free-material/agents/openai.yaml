@@ -1,0 +1,4 @@
+interface:
+  display_name: "HBG Free Material"
+  short_description: "Find stock images, videos, and music through a CLI"
+  default_prompt: "Use $hbg-free-material to find and download suitable stock media, compare candidates, and preserve attribution."

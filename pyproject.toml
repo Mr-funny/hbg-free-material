@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hbg-free-material"
+version = "1.0.0"
+description = "CLI and Agent Skill for finding and downloading stock images, videos, and Pixabay music."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Mr-funny" }]
+keywords = ["stock-images", "stock-video", "pexels", "unsplash", "pixabay", "agent-skill", "cli"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Multimedia :: Graphics",
+  "Topic :: Multimedia :: Video",
+]
+dependencies = [
+  "python-dotenv>=1.0,<2",
+  "requests>=2.32,<3",
+]
+
+[project.urls]
+Homepage = "https://github.com/Mr-funny/hbg-free-material"
+Issues = "https://github.com/Mr-funny/hbg-free-material/issues"
+
+[project.scripts]
+hbg-free-material = "hbg_free_material.cli:main"
+hbg-material = "hbg_free_material.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
