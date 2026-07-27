@@ -10,17 +10,53 @@
   <img src="https://img.shields.io/badge/Agent%20Skill-SKILL.md-8b5cf6?style=flat-square" alt="Agent Skill" />
   <img src="https://img.shields.io/badge/MCP-not%20required-0f766e?style=flat-square" alt="MCP not required" />
   <img src="https://img.shields.io/badge/B--roll-no%20per--shot%20AI%20fee-f59e0b?style=flat-square" alt="No per-shot AI generation fee" />
+  <img src="https://img.shields.io/badge/Install-tell%20your%20Agent-ec4899?style=flat-square" alt="Install with natural language" />
 </p>
 
 <p align="center">
   用一条 CLI 同时搜索、比较和下载 <strong>Pexels / Unsplash / Pixabay</strong> 的图片与视频，<br />
-  让免费图库承担 AI 视频里的 B-roll、空镜和过场，不必每个镜头都消耗生成额度。
+  <strong>简单 · 方便 · 免费 · 一句话安装 · 海量素材</strong>
 </p>
 
-```bash
-hbg-free-material search "Hong Kong cha chaan teng" --platform all --per-page 5 --json
-hbg-free-material video download "cat running in a garden" --platform all --count 2 --quality hd --json
+<a id="agent-install"></a>
+
+## ⚡ 一句话安装进 Agent
+
+不想碰终端？把下面整段话直接发给 Codex、Claude Code，或其他支持 `SKILL.md` 的 Agent：
+
+```text
+请从 https://github.com/Mr-funny/hbg-free-material 安装 hbg-free-material。
+
+请自动识别当前 Agent 的全局 skills 目录，同时安装 CLI 和 Agent Skill；
+如果已经存在旧版本，请先备份再更新。不要读取、打印或上传任何 API Key，
+只检查 PEXELS_API_KEY、UNSPLASH_API_KEY、PIXABAY_API_KEY 是否已经配置。
+
+安装完成后，请运行 hbg-free-material --help 和 hbg-free-material providers 验证，
+并告诉我如何使用 $hbg-free-material 搜索和下载图片、视频与 Pixabay 音乐。
 ```
+
+Agent 会自动完成：
+
+```text
+识别当前 Agent
+→ 下载仓库
+→ 安装免费 CLI
+→ 安装 SKILL.md
+→ 备份旧版本
+→ 验证命令与 Provider
+→ 告诉你如何调用
+```
+
+安装后只需要说：
+
+```text
+使用 $hbg-free-material，帮我找 6 条适合竖屏口播的免费 B-roll。
+先比较人物动作、构图、方向、时长和来源，再下载最合适的素材。
+```
+
+| 简单 | 方便 | 免费 | 海量资源 |
+|:---:|:---:|:---:|:---:|
+| 复制一句话 | Agent 自动安装和验证 | MIT 开源，不消耗视频生成 credits | 聚合 Pexels、Unsplash、Pixabay |
 
 ## 💸 核心卖点：用免费素材补足 AI 视频 B-roll
 
@@ -125,7 +161,13 @@ hbg-free-material video download "cat running in a garden" --platform all --coun
 
 ## 📦 安装
 
-### 一键安装 CLI + Codex Skill
+### 方法一：直接让 Agent 安装（最推荐）
+
+复制 README 首屏的[自然语言安装提示](#agent-install)发给 Agent 即可。它会根据当前环境安装 CLI 和 Skill、备份旧版本并完成验证。
+
+这种方式适合不想了解 Python、虚拟环境、Docker 或 skills 目录结构的用户。
+
+### 方法二：一条命令安装 CLI + Codex Skill
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Mr-funny/hbg-free-material/main/install.sh | sh
@@ -155,13 +197,13 @@ curl -fsSL https://raw.githubusercontent.com/Mr-funny/hbg-free-material/main/ins
 curl -fsSL https://raw.githubusercontent.com/Mr-funny/hbg-free-material/main/install.sh | sh -s -- --claude
 ```
 
-### 使用 pipx
+### 方法三：使用 pipx
 
 ```bash
 pipx install git+https://github.com/Mr-funny/hbg-free-material.git
 ```
 
-### 从源码安装
+### 方法四：从源码安装
 
 ```bash
 git clone https://github.com/Mr-funny/hbg-free-material.git
